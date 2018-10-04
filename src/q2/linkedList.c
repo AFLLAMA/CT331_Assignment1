@@ -96,12 +96,21 @@ listElement* pop(listElement** list) {
 void enqueue(listElement** list, char* data, size_t size) {
 	push(list, data, size);
 }
-listElement* dequeue(listElement* list) {	listElement* current = list;	if (list->next==NULL)
+listElement* dequeue(listElement* list) {
+	listElement* current = list;
+	if (list->next==NULL)
 	{
 		free(list);
 		return current;
-	}	while (current->next->next != NULL)
+	}
+	while (current->next->next != NULL)
 	{
 		current = current->next;
-	}	listElement* dequeued = current->next;	free(current->next);	current->next = NULL;	return dequeued;}
+	}
+	listElement* dequeued = current->next;
+	free(current->next);
+	current->next = NULL;
+	return dequeued;
+}
+
 
