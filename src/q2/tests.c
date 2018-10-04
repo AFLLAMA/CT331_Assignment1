@@ -16,10 +16,33 @@ void runTests(){
   traverse(l);
   printf("\n");
 
+  //Test push
+  //listElement* l3 = push(l, "newNode", 30);
+  printf("push....\n");
+  push(&l, "pushed string(4)", 30);
+  traverse(l);
+  printf("\n");
+
+  //Pop
+  printf("pop....\n");
+  pop(&l);
+  traverse(l);
+  printf("\n");
+
+  //Dequeue
+  printf("dequeue....\n");
+  dequeue(l);
+  traverse(l);
+  printf("\n");
+  
   // Test delete after
+  printf("delete....\n");
   deleteAfter(l);
   traverse(l);
   printf("\n");
 
+  
+  printf("length: %d",length(l));
   printf("\nTests complete.\n");
 }
+ 
